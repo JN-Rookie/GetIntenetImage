@@ -11,12 +11,12 @@ public class StreamTool {
     /*
     从数据流中获得数据
      */
-    public static byte[]readInputStream(InputStream mInputStream){
-        byte[] buff=new byte[1024];
+    public static byte[]read(InputStream inputStream){
+        byte[] buff=new byte[1024];//定义缓冲区
         int len=0;
-        ByteArrayOutputStream bos=new ByteArrayOutputStream();
+        ByteArrayOutputStream bos=new ByteArrayOutputStream();//定义输出流
         try {
-            while((len=mInputStream.read(buff))!=-1){
+            while ((len=inputStream.read(buff))!=-1){
                 bos.write(buff,0,len);
             }
             bos.close();
@@ -25,4 +25,5 @@ public class StreamTool {
         }
         return bos.toByteArray();
     }
+
 }

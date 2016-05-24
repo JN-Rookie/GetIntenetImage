@@ -13,20 +13,18 @@ import java.net.URL;
  * Created by Administrator on 2016/5/23.
  */
 public class ImageService {
-
-    public static byte[] getImage(String path) throws IOException {
-
-
-        URL url = new URL(path);
-        ;
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-        connection.setRequestMethod("GET");//设置请求方法为get
-        connection.setReadTimeout(5 * 1000);//设置请求过时时间为5秒
+    public static byte[] getImages(String path) throws IOException {
+        URL url=new URL(path);
+        HttpURLConnection connection= (HttpURLConnection) url.openConnection();
+        connection.setRequestMethod("GET");//用GET方法获取图片
+        connection.setReadTimeout(5*1000);//设置等待超时时间为5秒
         connection.disconnect();
-        InputStream inputStream = connection.getInputStream();//通过输入流获得图片数据
-        byte[] data = StreamTool.readInputStream(inputStream);//获得图片的二进制数据
-
+        InputStream inputStream=connection.getInputStream();//用connection通过输入流获取图片
+        byte[] data=StreamTool.read(inputStream);//获取图片的二进制数据
 
         return data;
+
     }
+
+
 }

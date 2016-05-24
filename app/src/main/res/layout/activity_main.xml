@@ -7,6 +7,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="edu.feicui.getintenetimage.MainActivity">
+    <EditText
+        android:id="@+id/edt_input"
+        android:hint="请输入图片网络地址"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
     <Button
         android:id="@+id/btn_getimage"
         android:textSize="40sp"
